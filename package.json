@@ -1,0 +1,27 @@
+{
+  "name": "youtube-clone",
+  "version": "1.0.0",
+  "description": "youtube clone built using NodeJS, Express, Mongop, ES6",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twilight92/youtube-clone.git"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node index.js"
+  },
+  "author": "soojung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/twilight92/youtube-clone/issues"
+  },
+  "homepage": "https://github.com/twilight92/youtube-clone#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/node": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "nodemon": "^3.1.4"
+  }
+}
