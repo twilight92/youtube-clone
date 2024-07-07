@@ -19,15 +19,10 @@ const handleHome = (req, res, next) => {
     return res.send("I love middleware");
 };
 
-const handleProtected = (req, res) => {
-    return res.send("Welcome to thr private lounge");
-};
-
 // use: 모든 route에서 사용하는 미들웨어
 app.use(logger)
 app.use(privateMiddleware)
 app.get("/", handleHome);
-app.get("/protected", handleProtected);
 
 const handleListneing = () => console.log(`Server listening on port http://localhost:${PORT}🚀`);
 
