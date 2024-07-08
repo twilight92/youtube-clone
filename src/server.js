@@ -5,24 +5,30 @@ const PORT = 4000;
 
 const app = express();
 const logger = morgan("dev");
+app.use(logger);
 
-const privateMiddleware = (req, res, next) => {
-    const url = req.url;
-    if (url === "/protected") {
-        return res.send("<h1>Not Allowed</h1>")
-    }
-    console.log("Allowed, you may continue");
-    next();
-};
+const globalRouter = express.Router();
 
-const handleHome = (req, res, next) => {
-    return res.send("I love middleware");
-};
+const handleHome = (req, res) => res.send("Home");
 
-// use: 모든 route에서 사용하는 미들웨어
-app.use(logger)
-app.use(privateMiddleware)
-app.get("/", handleHome);
+globalRouter.get("/", handleHome);
+
+const userRouter = express.Router();
+
+const handleEditUser = (req, res) => res.send("Edit User");
+
+userRouter.get("/edit", handleEditUser);
+
+const videoRouter = express.Router();
+
+const handleWatchVideo = (req, res) => res.send("Watch Video");
+
+videoRouter.get("/watch", handleWatchVideo);
+
+
+app.use("/", globalRouter);
+app.use("/videos", videoRouter);
+app.use("/users", userRouter);
 
 const handleListneing = () => console.log(`Server listening on port http://localhost:${PORT}🚀`);
 
