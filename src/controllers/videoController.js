@@ -1,8 +1,3 @@
-const fakeUser = {
-    username: "Nicolas",
-    loggedIn: true,
-}
-
 export const trending = (req, res) => res.render("home", { pageTitle: "Home", fakeUser });
 export const see = (req, res) => res.render("watch");
 export const edit = (req, res) => res.send("Edit");
