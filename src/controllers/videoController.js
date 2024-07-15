@@ -1,5 +1,5 @@
 export const trending = (req, res) => {
-    const videos = [
+    let videos = [
         {
             title: "First Video",
             rating: 5,
@@ -14,7 +14,7 @@ export const trending = (req, res) => {
             comments: 2,
             createdAt: "2 minutes ago",
             views: 59,
-            id: 1,
+            id: 2,
         },
         {
             title: "Third Video",
@@ -22,7 +22,7 @@ export const trending = (req, res) => {
             comments: 2,
             createdAt: "2 minutes ago",
             views: 59,
-            id: 1,
+            id: 3,
         },
     ];
     return res.render("home", { pageTitle: "Home", videos });
