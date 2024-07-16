@@ -48,5 +48,6 @@ export const getUpload = (req, res) => {
     return res.render("upload", { pageTitle: "Upload Video" });
 };
 export const postUpload = (req, res) => {
+    console.log(req.body)
     return res.redirect("/");
 };
