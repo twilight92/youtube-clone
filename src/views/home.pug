@@ -2,7 +2,6 @@ extends base.pug
 include mixins/video
 
 block content
-    h1 환영해요! 인기 급상승 동영상들이 있어요
     each video in videos
         +video(video)
     else
