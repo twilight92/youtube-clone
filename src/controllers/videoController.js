@@ -39,9 +39,12 @@ export const postEdit = async (req, res) => {
         return res.render("404", { pageTitle: "Video not found"});
     }
 
-    video.title = title;
-    video.description = description;
-    video.hashtags = hashtags.split(",").map(word => word.startsWith('#') ? word : `#${word}`);
+    await Video.findByIdAndUpdate(video, {
+        title,
+        description,
+        hashtags: hashtags.split(",").map(word => word.startsWith('#') ? word : `#${word}`)
+    })
+
     await video.save();
     return res.redirect(`/videos/${id}`);
 }
