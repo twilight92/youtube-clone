@@ -15,7 +15,7 @@ export const watch = async (req, res) => {
     const video = await Video.findById(id);
 console.log(video)
 
-    if (video === null) {
+    if (!video) {
         return res.render("404", { pageTitle: "Video not found"});
     }
 
