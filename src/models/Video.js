@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 export const formatHashtags = (hashtags) => {
-    return hashtags[0].split(",").map((word) => (word.startsWith("#") ? word : `#${word}`));
+    return hashtags.split(",").map((word) => (word.startsWith("#") ? word : `#${word}`));
 }
 
 const videoSchema = new mongoose.Schema({
