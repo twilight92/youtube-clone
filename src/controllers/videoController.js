@@ -4,7 +4,7 @@ export const home = async(req, res) => {
     try {
         // Video.find({}) => search terms(비어있으면 모든형식을 찾는다는걸 의미)
         // await는 database를 기다려줌
-        const videos = await Video.find({});
+        const videos = await Video.find({}).sort({createdAt: "desc"});
         return res.render("home", { pageTitle: "Home", videos });
     } catch {
         return res.render("server-error");
