@@ -10,6 +10,7 @@ export const home = async(req, res) => {
         return res.render("server-error");
     }
 }
+
 export const watch = async (req, res) => {
     const { id } = req.params;
     const video = await Video.findById(id);
@@ -20,6 +21,7 @@ export const watch = async (req, res) => {
 
     return res.render("watch", { pageTitle: video.title, video });
 }
+
 export const getEdit = async (req, res) => {
     const { id } = req.params;
     const video = await Video.findById(id);
@@ -30,6 +32,7 @@ export const getEdit = async (req, res) => {
 
     return res.render("edit", { pageTitle: `Editing: ${video.title}`, video });
 }
+
 export const postEdit = async (req, res) => {
     const { id } = req.params; // const id = req.params.id;
     const {title, description, hashtags } = req.body;
@@ -51,6 +54,7 @@ export const postEdit = async (req, res) => {
 export const getUpload = (req, res) => {
     return res.render("upload", { pageTitle: "Upload Video" });
 };
+
 export const postUpload = async (req, res) => {
     const { title, description, hashtags } = req.body;
     try {
