@@ -6,7 +6,7 @@ export const postJoin = async (req, res) => {
     await User.create({
         name, username, email, password, location,
     });
-    res.end();
+    return res.redirect("/login");
 };
 export const edit = (req, res) => res.render("edit");
 export const remove = (req, res) => res.send("Remove Usere");
