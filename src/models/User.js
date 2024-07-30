@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
-const userScheme = new mongoose.Schem({
+const userSchema = new mongoose.Schema({
 
 });
 
-const User = mongoose.model("User", userScheme);
+const User = mongoose.model("User", userSchema);
 export default User;
