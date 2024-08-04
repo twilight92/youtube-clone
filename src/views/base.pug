@@ -10,10 +10,14 @@ html(lang="ko")
                 ul
                     li
                         a(href="/") Home
-                    li
-                        a(href="/join") Join
-                    li
-                        a(href="/Login") Login
+                    if loggedIn
+                        li
+                            a(href="/Logout") Log Out
+                    else
+                        li
+                            a(href="/join") Join
+                        li
+                            a(href="/Login") Login
                     li
                         a(href="/search") Search
                     li
