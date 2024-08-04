@@ -1,5 +1,12 @@
 import User from "../models/User";
 
+/*
+
+get은 렌더만 하면 되지만
+post는 실제로 사용되어지는 기능을 담당하고 있다.
+(데이터를 다루고 에러 처리, 유효성 체크 등을 하며 db와 통신)
+
+*/
 export const getJoin = (req, res) => res.render("join", { pageTitle: "Join" });
 export const postJoin = async (req, res) => {
     const {name, username, email, password, password2, location} = req.body;
