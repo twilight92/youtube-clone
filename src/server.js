@@ -24,7 +24,7 @@ app.use((req, res, next) => {
         console.log(sessions);
         next();
     })
-})
+});
 
 app.use("/", rootRouter);
 app.use("/users", userRouter);
