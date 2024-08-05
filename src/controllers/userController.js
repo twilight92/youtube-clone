@@ -75,6 +75,10 @@ export const startGithubLogin = (req, res) => {
     return res.redirect(finalURL);
 };
 
+export const finishGithubLogin = (res, req) => {
+
+};
+
 export const edit = (req, res) => res.render("Edit User");
 export const remove = (req, res) => res.send("Remove Usere");
 export const logout = (req, res) => res.send("Log out");
