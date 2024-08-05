@@ -117,12 +117,8 @@ export const finishGithubLogin = async (req, res) => {
         if (!emailObj) {
             return res.redirect("/login");
         }
-        const existingUser = await User.findOne({ email: emailObj.email });
-        if (existingUser) {
-            req.session.loggedIn = true;
-            req.session.user = existingUser;
-            return res.redirect("/");
-        } else {
+        let user = await User.findOne({ email: emailObj.email });
+        if (!user) {
             // create an account
             await User.create({
                 name: userData.name,
@@ -132,10 +128,11 @@ export const finishGithubLogin = async (req, res) => {
                 socialOnly: true,
                 location: userData.location,
             });
-            req.session.loggedIn = true;
-            req.session.user = existingUser;
-            return res.redirect("/");
         }
+
+        req.session.loggedIn = true;
+        req.session.user = user;
+        return res.redirect("/");
 
     } else {
         return res.redirect("/login");
