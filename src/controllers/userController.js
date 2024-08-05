@@ -66,7 +66,7 @@ export const postLogin = async(req, res) => {
 export const startGithubLogin = (req, res) => {
     const baseURL = `https://github.com/login/oauth/authorize`;
     const config = {
-        client_id: "Ov23liwEOtsJif9bIoig",
+        client_id: process.env.GH_CLIENT,
         allow_signup: false,
         scope: "read:user user:email",
     }
