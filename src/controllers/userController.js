@@ -76,7 +76,10 @@ export const startGithubLogin = (req, res) => {
 };
 
 export const finishGithubLogin = (res, req) => {
-
+    const config = {
+        client_id: process.env.GH_CLIENT,
+        client_secret: process.env.GH_SECRET,
+    };
 };
 
 export const edit = (req, res) => res.render("Edit User");
