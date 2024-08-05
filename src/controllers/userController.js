@@ -32,7 +32,11 @@ export const postJoin = async (req, res) => {
 
     try {
         await User.create({
-            name, username, email, password, location,
+            name,
+            username,
+            email,
+            password,
+            location,
         });
         return res.redirect("/login");
     } catch(error) {
@@ -120,8 +124,18 @@ export const finishGithubLogin = async (req, res) => {
             return res.redirect("/");
         } else {
             // create an account
+            await User.create({
+                name: userData.name,
+                username: userData.login,
+                email: emailObj.email,
+                password: "",
+                socialOnly: true,
+                location: userData.location,
+            });
+            req.session.loggedIn = true;
+            req.session.user = existingUser;
+            return res.redirect("/");
         }
-        console.log('email', emailObj);
 
     } else {
         return res.redirect("/login");
