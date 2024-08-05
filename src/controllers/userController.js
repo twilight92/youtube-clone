@@ -48,7 +48,7 @@ export const getLogin = (req, res) => res.render("Login", { pageTitle: "Login" }
 export const postLogin = async(req, res) => {
     const {username, password} = req.body;
     const pageTitle = "Login";
-    const user = await User.findOne({username});
+    const user = await User.findOne({ username, socialOnly: false});
 
     // check if account exists
     if (!user) {
