@@ -158,7 +158,16 @@ export const postEdit = async (req, res) => {
         username,
         location,
     });
-    return res.render("edit-profile");
+
+    req.session.user = {
+        ...req.session.user,
+        name,
+        email,
+        username,
+        location,
+    };
+
+    return res.redirect("/users/edit");
 }
 
 export const logout = (req, res) => {
