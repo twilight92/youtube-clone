@@ -183,7 +183,7 @@ export const postChangePassword = async (req, res) => {
     } = req;
 
     if (newPassword !== newPasswordConfirmation) {
-        return res.render("users/change-password", { pageTitle: "Change Password", errorMessage: "The password does not math the confirmation" });
+        return res.status(400).render("users/change-password", { pageTitle: "Change Password", errorMessage: "The password does not math the confirmation" });
     }
 
     // send notification
