@@ -171,7 +171,7 @@ export const logout = (req, res) => {
 };
 
 export const getChangePassword = (req, res) => {
-    return res.render("change-password", { pageTitle: "Change Password" });
+    return res.render("users/change-password", { pageTitle: "Change Password" });
 };
 
 export const postChangePassword = (req, res) => {
