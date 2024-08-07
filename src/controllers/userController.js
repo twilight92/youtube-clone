@@ -174,13 +174,17 @@ export const getChangePassword = (req, res) => {
     return res.render("users/change-password", { pageTitle: "Change Password" });
 };
 
-export const postChangePassword = (req, res) => {
+export const postChangePassword = async (req, res) => {
     const {
         session: {
             user: {_id}
         },
         body: { oldPassword, newPassword, newPasswordConfirmation },
     } = req;
+
+    if (newPassword !== newPasswordConfirmation) {
+        return res.render("users/change-password", { pageTitle: "Change Password", errorMessage: "The password does not math the confirmation" });
+    }
 
     // send notification
     return res.redirect("/");
