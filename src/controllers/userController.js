@@ -106,7 +106,7 @@ export const finishGithubLogin = async (req, res) => {
                 Authorization: `token ${access_token}`,
             }
         })).json();
-        console.log('userData', userData);
+
         const emailData = await (await fetch(`${apiUrl}/user/emails`, {
             headers: {
                 Authorization: `token ${access_token}`,
