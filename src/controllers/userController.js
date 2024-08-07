@@ -175,6 +175,13 @@ export const getChangePassword = (req, res) => {
 };
 
 export const postChangePassword = (req, res) => {
+    const {
+        session: {
+            user: {_id}
+        },
+        body: { oldPassword, newPassword, newPasswordConfirmation },
+    } = req;
+
     // send notification
     return res.redirect("/");
 };
