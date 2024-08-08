@@ -198,6 +198,7 @@ export const postChangePassword = async (req, res) => {
     console.log('unhashed', user.password);
     await user.save();
     console.log('new', user.password);
+    req.session.user.password = user.password;
 
     // send notification
     return res.redirect("/users/logout");
