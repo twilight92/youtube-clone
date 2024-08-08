@@ -191,6 +191,14 @@ export const postChangePassword = async (req, res) => {
         return res.status(400).render("users/change-password", { pageTitle: "Change Password", errorMessage: "The password does not math the confirmation" });
     }
 
+    const user = await User.findById(_id);
+
+    console.log('old', user.password);
+    user.password = newPassword;
+    console.log('unhashed', user.password);
+    await user.save();
+    console.log('new', user.password);
+
     // send notification
     return res.redirect("/");
 };
