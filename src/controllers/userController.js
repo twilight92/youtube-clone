@@ -200,7 +200,7 @@ export const postChangePassword = async (req, res) => {
     console.log('new', user.password);
 
     // send notification
-    return res.redirect("/");
+    return res.redirect("/users/logout");
 };
 
 export const see = (req, res) => res.send("See User");
