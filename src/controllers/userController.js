@@ -133,6 +133,7 @@ export const finishGithubLogin = async (req, res) => {
 
         req.session.loggedIn = true;
         req.session.user = user;
+        console.log(req.session.user)
         return res.redirect("/");
 
     } else {
