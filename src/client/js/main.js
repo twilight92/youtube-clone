@@ -1,6 +1,6 @@
-const hellow = async () => {
+const hello = async () => {
     alert("Hi it's working")
     const x = await fetch("")
 }
 
-hellow();
+hello();
