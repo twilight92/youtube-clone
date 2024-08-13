@@ -5,7 +5,9 @@ export const home = async(req, res) => {
     try {
         // Video.find({}) => search terms(비어있으면 모든형식을 찾는다는걸 의미)
         // await는 database를 기다려줌
-        const videos = await Video.find({}).sort({createdAt: "desc"});
+        const videos = await Video.find({})
+        .sort({ createdAt: "desc" })
+        .populate("owner");
         return res.render("home", { pageTitle: "Home", videos });
     } catch {
         return res.render("server-error");
@@ -114,7 +116,7 @@ export const search = async(req, res) => {
             title: {
                 $regex: new RegExp(keyword, "i")
             }
-        });
+        }).populate("owner");
     }
 
     return res.render("search", { pageTitle: "Search", videos });
