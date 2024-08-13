@@ -10,7 +10,8 @@ module.exports = {
     watch: true,
     output: {
         filename: "js/main.js",
-        path: path.resolve(__dirname, "assets")
+        path: path.resolve(__dirname, "assets"),
+        clean: true
     },
     module: {
         rules: [
