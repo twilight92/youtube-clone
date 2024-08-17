@@ -14,14 +14,12 @@ const handlePlayClick = (e) => {
     // else play the video
     video.pause();
   }
+
+  playBtn.innerText = video.paused ? "Pause" : "Play";
 };
 
 const handleMute = (e) => {};
 
-const handlePause = (e) => (playBtn.innerText = "Play");
-const handlePlay = (e) => (playBtn.innerText = "Pause");
 
 playBtn.addEventListener("click", handlePlayClick);
-muteBtn.addEventListener("click", handleMute);
-video.addEventListener("pause", handlePause);
 video.addEventListener("play", handlePlay);
