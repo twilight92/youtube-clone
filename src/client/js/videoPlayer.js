@@ -74,3 +74,9 @@ volumeRange.addEventListener("input", handleVolumeChange);
 video.addEventListener("loadedmetadata", handleLoadedMetadata);
 video.addEventListener("timeupdate", handleTimeUpdate);
 timelineRange.addEventListener("input", handleTimelineChange);
+
+window.addEventListener("keydown", (event) => {
+  if (event.code == "Enter") {
+    handlePlayClick();
+  }
+});
