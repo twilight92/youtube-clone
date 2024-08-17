@@ -117,7 +117,7 @@ video.addEventListener("mousemove", handleMouseMove);
 video.addEventListener("mouseleave", handleMouseLeave);
 
 window.addEventListener("keydown", (event) => {
-  if (event.code == "Enter") {
+  if (event.code == "Space") {
     handlePlayClick();
   }
 });
