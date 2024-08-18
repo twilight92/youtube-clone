@@ -4,7 +4,7 @@ const video = document.getElementById("preview");
 const handleStart = async () => {
   const stream = await navigator.mediaDevices.getUserMedia({
     audio: true,
-    video: { width: 300, height: 100 },
+    video: true,
   });
 
   video.srcObject = stream;
