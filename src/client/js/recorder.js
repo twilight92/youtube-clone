@@ -18,6 +18,16 @@ const handleDownload = async () => {
   // 브라우저의 메모리에는 output.mp4 파일이 있다.
   await ffmpeg.run("-i", "recording.webm", "-r", "60", "output.mp4");
 
+  await ffmpeg.run(
+    "-i",
+    "recording.webm",
+    "-ss",
+    "00:00:01",
+    "-frames:v",
+    "1",
+    "thumbnail.jpg"
+  );
+
   // ffmpeg의 FS(파일 시스템)을 이용해서 mp4 파일을 가져온다.
   const mp4File = ffmpeg.FS("readFile", "output.mp4");
 
