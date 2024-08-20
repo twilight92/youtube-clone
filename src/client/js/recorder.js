@@ -15,11 +15,29 @@ const handleDownload = async () => {
   // FS는 FileSystem writeFile 뒤 인자는 파일명, 그 다음은 binaryData(영상 정보를 가리키는 URL = videoFile) function
   ffmpeg.FS("writeFile", "recording.webm", await fetchFile(videoFile));
 
+  // 브라우저의 메모리에는 output.mp4 파일이 있다.
   await ffmpeg.run("-i", "recording.webm", "-r", "60", "output.mp4");
 
+  // ffmpeg의 FS(파일 시스템)을 이용해서 mp4 파일을 가져온다.
+  const mp4File = ffmpeg.FS("readFile", "output.mp4");
+
+  /* 
+    // unit8Array 타입 - 삭제 or 파일 합치기 등 뭐든 할 수 있는 원시 파일
+    console.log(mp4File); 
+
+    // ArrayBuffer - mp4File의 raw data(binary data)(실제 파일)에 접근하려면 mp4File.buffer를 사용해야한다
+    console.log(mp4File.buffer); 
+
+    기억해야할 것은 binary data를 사용하고 싶다면 buffer를 사용해야한다
+  */
+
+  // blob은 배열 안에 배열들을 받을 수 있다/js에게 이건 video/mp4 type의 파일이라고 알려줘야한다.
+  const mp4Blob = new Blob([mp4File.buffer], { type: "video/mp4" });
+  const mp4Url = URL.createObjectURL(mp4Blob);
+
   const a = document.createElement("a");
-  a.href = videoFile;
-  a.download = "MyRecoding.webm";
+  a.href = mp4Url;
+  a.download = "MyRecoding.mp4";
   document.body.appendChild(a);
   a.click();
 
