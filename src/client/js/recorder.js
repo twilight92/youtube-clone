@@ -28,8 +28,9 @@ const handleDownload = async () => {
     "thumbnail.jpg"
   );
 
-  // ffmpeg의 FS(파일 시스템)을 이용해서 mp4 파일을 가져온다.
+  // ffmpeg의 FS(파일 시스템)을 이용해서 mp4, jpg 파일을 가져온다.
   const mp4File = ffmpeg.FS("readFile", "output.mp4");
+  const thumbFile = ffmpeg.FS("readFile", "thumbnail.jpg");
 
   /* 
     // unit8Array 타입 - 삭제 or 파일 합치기 등 뭐든 할 수 있는 원시 파일
@@ -43,13 +44,22 @@ const handleDownload = async () => {
 
   // blob은 배열 안에 배열들을 받을 수 있다/js에게 이건 video/mp4 type의 파일이라고 알려줘야한다.
   const mp4Blob = new Blob([mp4File.buffer], { type: "video/mp4" });
+  const thumbBlob = new Blob([thumbFile.buffer], { type: "image/jpg" });
+
   const mp4Url = URL.createObjectURL(mp4Blob);
+  const blobUrl = URL.createObjectURL(thumbBlob);
 
   const a = document.createElement("a");
   a.href = mp4Url;
   a.download = "MyRecoding.mp4";
   document.body.appendChild(a);
   a.click();
+
+  const thumbA = document.createElement("a");
+  thumbA.href = mp4Url;
+  thumbA.download = "MyThumbnail.jpg";
+  document.body.appendChild(thumbA);
+  thumbA.click();
 
   // 다운로드 후 카메라 끄고 싶을 경우 추가(stream 연결을 끊는다.)
   const tracks = stream.getTracks();
