@@ -12,6 +12,14 @@ const files = {
   thumb: "thumbnail.jpg",
 };
 
+const downloadFile = (fileUrl, fileName) => {
+  const a = document.createElement("a");
+  a.href = fileUrl;
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+};
+
 const handleDownload = async () => {
   const ffmpeg = createFFmpeg({ log: true });
   // await을 사용하는 이유는 사용자가 소프트웨어를 사용할 것이기 때문(사용자가 무언가를 설치해서 javascript가 아닌 코드를 사용하는 것)
@@ -55,17 +63,8 @@ const handleDownload = async () => {
   const mp4Url = URL.createObjectURL(mp4Blob);
   const thumbUrl = URL.createObjectURL(thumbBlob);
 
-  const a = document.createElement("a");
-  a.href = mp4Url;
-  a.download = "MyRecoding.mp4";
-  document.body.appendChild(a);
-  a.click();
-
-  const thumbA = document.createElement("a");
-  thumbA.href = thumbUrl;
-  thumbA.download = "MyThumbnail.jpg";
-  document.body.appendChild(thumbA);
-  thumbA.click();
+  downloadFile(mp4Url, "MyRecoding.mp4");
+  downloadFile(thumbUrl, "MyThumbnail.jpg");
 
   // 속도 개선을 위해 파일 링크 해제
   ffmpeg.FS("unlink", files.input);
