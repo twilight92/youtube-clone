@@ -47,7 +47,7 @@ const handleDownload = async () => {
   const thumbBlob = new Blob([thumbFile.buffer], { type: "image/jpg" });
 
   const mp4Url = URL.createObjectURL(mp4Blob);
-  const blobUrl = URL.createObjectURL(thumbBlob);
+  const thumbUrl = URL.createObjectURL(thumbBlob);
 
   const a = document.createElement("a");
   a.href = mp4Url;
@@ -56,7 +56,7 @@ const handleDownload = async () => {
   a.click();
 
   const thumbA = document.createElement("a");
-  thumbA.href = mp4Url;
+  thumbA.href = thumbUrl;
   thumbA.download = "MyThumbnail.jpg";
   document.body.appendChild(thumbA);
   thumbA.click();
