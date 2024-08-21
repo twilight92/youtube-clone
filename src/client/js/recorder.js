@@ -6,6 +6,12 @@ let stream;
 let recorder;
 let videoFile;
 
+const files = {
+  input: "recording.webm",
+  output: "output.mp4",
+  thumb: "thumbnail.jpg",
+};
+
 const handleDownload = async () => {
   const ffmpeg = createFFmpeg({ log: true });
   // await을 사용하는 이유는 사용자가 소프트웨어를 사용할 것이기 때문(사용자가 무언가를 설치해서 javascript가 아닌 코드를 사용하는 것)
@@ -13,24 +19,24 @@ const handleDownload = async () => {
 
   // WebAssembly를 사용하기 때문에 더이상 브라우저에 있는 것이 아니다. (ffmpeg 가상의 세계에 파일 생성 가능)
   // FS는 FileSystem writeFile 뒤 인자는 파일명, 그 다음은 binaryData(영상 정보를 가리키는 URL = videoFile) function
-  ffmpeg.FS("writeFile", "recording.webm", await fetchFile(videoFile));
+  ffmpeg.FS("writeFile", files.input, await fetchFile(videoFile));
 
   // 브라우저의 메모리에는 output.mp4 파일이 있다.
-  await ffmpeg.run("-i", "recording.webm", "-r", "60", "output.mp4");
+  await ffmpeg.run("-i", files.input, "-r", "60", files.output);
 
   await ffmpeg.run(
     "-i",
-    "recording.webm",
+    files.input,
     "-ss",
     "00:00:01",
     "-frames:v",
     "1",
-    "thumbnail.jpg"
+    files.thumb
   );
 
   // ffmpeg의 FS(파일 시스템)을 이용해서 mp4, jpg 파일을 가져온다.
-  const mp4File = ffmpeg.FS("readFile", "output.mp4");
-  const thumbFile = ffmpeg.FS("readFile", "thumbnail.jpg");
+  const mp4File = ffmpeg.FS("readFile", files.output);
+  const thumbFile = ffmpeg.FS("readFile", files.thumb);
 
   /* 
     // unit8Array 타입 - 삭제 or 파일 합치기 등 뭐든 할 수 있는 원시 파일
@@ -62,9 +68,9 @@ const handleDownload = async () => {
   thumbA.click();
 
   // 속도 개선을 위해 파일 링크 해제
-  ffmpeg.FS("unlink", "recording.webm");
-  ffmpeg.FS("unlink", "output.mp4");
-  ffmpeg.FS("unlink", "thumbnail.jpg");
+  ffmpeg.FS("unlink", files.input);
+  ffmpeg.FS("unlink", files.output);
+  ffmpeg.FS("unlink", files.thumb);
 
   // URL도 삭제(revokeObjectURL 이 객체를 메모리에서 지우고 싶다는 것)
   URL.revokeObjectURL(videoFile);
