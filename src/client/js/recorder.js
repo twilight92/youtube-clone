@@ -61,6 +61,16 @@ const handleDownload = async () => {
   document.body.appendChild(thumbA);
   thumbA.click();
 
+  // 속도 개선을 위해 파일 링크 해제
+  ffmpeg.FS("unlink", "recording.webm");
+  ffmpeg.FS("unlink", "output.mp4");
+  ffmpeg.FS("unlink", "thumbnail.jpg");
+
+  // URL도 삭제(revokeObjectURL 이 객체를 메모리에서 지우고 싶다는 것)
+  URL.revokeObjectURL(videoFile);
+  URL.revokeObjectURL(mp4Url);
+  URL.revokeObjectURL(thumbUrl);
+
   // 다운로드 후 카메라 끄고 싶을 경우 추가(stream 연결을 끊는다.)
   const tracks = stream.getTracks();
   tracks.forEach((track) => {
