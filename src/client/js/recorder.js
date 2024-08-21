@@ -1,6 +1,6 @@
 import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
 
-const startBtn = document.getElementById("startBtn");
+const actionBtn = document.getElementById("startBtn");
 const video = document.getElementById("preview");
 let stream;
 let recorder;
@@ -85,17 +85,17 @@ const handleDownload = async () => {
 };
 
 const handleStop = () => {
-  startBtn.innerText = "Download Recording";
-  startBtn.removeEventListener("click", handleStop);
-  startBtn.addEventListener("click", handleDownload);
+  actionBtn.innerText = "Download Recording";
+  actionBtn.removeEventListener("click", handleStop);
+  actionBtn.addEventListener("click", handleDownload);
 
   recorder.stop();
 };
 
 const handleStart = () => {
-  startBtn.innerText = "녹화 종료";
-  startBtn.removeEventListener("click", handleStart);
-  startBtn.addEventListener("click", handleStop);
+  actionBtn.innerText = "녹화 종료";
+  actionBtn.removeEventListener("click", handleStart);
+  actionBtn.addEventListener("click", handleStop);
 
   recorder = new MediaRecorder(stream);
   recorder.ondataavailable = (event) => {
@@ -119,4 +119,4 @@ const init = async () => {
 };
 
 init();
-startBtn.addEventListener("click", handleStart);
+actionBtn.addEventListener("click", handleStart);
