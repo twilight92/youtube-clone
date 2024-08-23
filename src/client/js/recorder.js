@@ -1,6 +1,6 @@
 import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
 
-const actionBtn = document.getElementById("startBtn");
+const actionBtn = document.getElementById("actionBtn");
 const video = document.getElementById("preview");
 let stream;
 let recorder;
@@ -21,6 +21,12 @@ const downloadFile = (fileUrl, fileName) => {
 };
 
 const handleDownload = async () => {
+  actionBtn.removeEventListener("click", handleDownload);
+
+  actionBtn.innerText = "Transcoding...";
+
+  actionBtn.disabled = true;
+
   const ffmpeg = createFFmpeg({ log: true });
   // await을 사용하는 이유는 사용자가 소프트웨어를 사용할 것이기 때문(사용자가 무언가를 설치해서 javascript가 아닌 코드를 사용하는 것)
   await ffmpeg.load();
@@ -75,6 +81,10 @@ const handleDownload = async () => {
   URL.revokeObjectURL(videoFile);
   URL.revokeObjectURL(mp4Url);
   URL.revokeObjectURL(thumbUrl);
+
+  actionBtn.disabled = false;
+  actionBtn.innerText = "Record Again";
+  actionBtn.addEventListener("click", handleDownload);
 
   // 다운로드 후 카메라 끄고 싶을 경우 추가(stream 연결을 끊는다.)
   const tracks = stream.getTracks();
