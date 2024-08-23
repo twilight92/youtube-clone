@@ -84,14 +84,14 @@ const handleDownload = async () => {
 
   actionBtn.disabled = false;
   actionBtn.innerText = "Record Again";
-  actionBtn.addEventListener("click", handleDownload);
+  actionBtn.addEventListener("click", handleStart);
 
   // 다운로드 후 카메라 끄고 싶을 경우 추가(stream 연결을 끊는다.)
-  const tracks = stream.getTracks();
-  tracks.forEach((track) => {
-    track.stop();
-  });
-  stream = null;
+  // const tracks = stream.getTracks();
+  // tracks.forEach((track) => {
+  //   track.stop();
+  // });
+  // stream = null;
 };
 
 const handleStart = () => {
