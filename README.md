@@ -20,8 +20,9 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
 
 ## Todo
 - Video
-  - [x] Player
-  - [x] Upload
+  - [x] [Player](https://github.com/twilight92/youtube-clone/wiki/HTMLVideoElement)
+    - 재생/정지/오디오 컨트롤/타임 업데이트/재생시간 변경/재생 종료 시 조회수 +1 - HTMLVideoElement를 이용
+  - [x] [Upload](https://github.com/twilight92/youtube-clone/wiki/Media)
     - 미디어 입력 권한 - MediaDevices를 이용한 미디어 장치 접근
     - 녹화/녹음 - MediaRecorder를 이용한 비디오/오디오 녹화
     - 미디어 형식 변환 및 스크린샷 - ffmpeg를 이용 🧪실험적 기능
