@@ -34,6 +34,6 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
     - 파일 업로드
       - NodeJS 미들웨어 [multer](https://github.com/twilight92/youtube-clone/wiki/multer) 이용
   - [ ] 사용자 편의성 제공
-    - flash 메세지
+    - flash 메세지를 이용한 안내 문구 제공
       - [express-flash](https://github.com/twilight92/youtube-clone/wiki/express%E2%80%90flash) 이용
     
