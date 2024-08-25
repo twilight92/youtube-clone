@@ -33,6 +33,11 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
 <br>
 
 ## Todo
+- Set Up
+  - [x] NodeJS Project 생성
+  - [x] Express 설치
+  - [x] Dependencies 알아보기
+  - [x] Nodemon 알아보기
 - Video
   - [x] Player
     - 재생/정지/오디오 컨트롤/타임 업데이트/재생시간 변경/재생 종료 시 조회수 +1
