@@ -17,6 +17,20 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
   - [x] 상세
   - [x] 편집
   - [x] 검색
+<br>
+
+## What I Learned
+- NodeJS
+  - JavaScript만으로 프론트엔드/백엔드 구현
+- Express
+  - NodeJS 프레임워크 Express를 이용하여 서버를 처음부터 구축
+  - 서버를 구성하는 방법과 서버가 제공하는 모든 기능을 사용하는 방법
+- Mongoose + Mongo
+  - 데이터베이스에서 데이터를 모델링하는 방법
+  - 동영상, 사용자, 댓글, 조회수, 세션을 저장하는 방법을 배우고 관계를 만드는 방법
+- ES6 + SCSS
+  - 가장 진보된 버전의 자바스크립트와 CSS 전처리기 SCSS를 이용한 화면 구현
+<br>
 
 ## Todo
 - Video
@@ -36,4 +50,33 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
   - [ ] 사용자 편의성 제공
     - flash 메세지를 이용한 안내 문구 제공
       - [express-flash](https://github.com/twilight92/youtube-clone/wiki/express%E2%80%90flash) 이용
-    
+<br>
+  
+## Packages
+- NodeJS
+- ES6
+- Express
+- Babel
+- Pug
+- Passport
+- AJAX
+- Webpack
+- SCSS
+- MongoDB
+- Mongoose
+- Multer
+- NoSQL
+<br>
+
+## 배운 이론
+- Request / Response
+- MVC
+- Cookies
+- Sessions
+- Middlewares
+- Authentication
+- Security
+- Routing
+- Templates
+- Models
+- Relationships
