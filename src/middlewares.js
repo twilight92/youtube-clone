@@ -13,7 +13,7 @@ export const protectorMiddleware = (req, res, next) => {
     next();
   } else {
     // flash message 생성(메세지 타입, 내용)
-    req.flash("error", "Not authorized");
+    req.flash("error", "Log in first");
     return res.redirect("/login");
   }
 };
