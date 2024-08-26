@@ -53,6 +53,14 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
     - 파일 업로드
       - NodeJS 미들웨어 [multer](https://github.com/twilight92/youtube-clone/wiki/multer) 이용
 - 댓글
+  - [x] Comment schema 만들고 관계 추가하기
+    - mongoose import
+    - schema 만들기/댓글에 필요한 property 추가
+      - createAt
+      - comment text
+      - owner
+      - video
+  - [x] 
 - 사용자 편의성 제공
   - [x] flash 메세지를 이용한 안내 문구 제공
       - [express-flash](https://github.com/twilight92/youtube-clone/wiki/express%E2%80%90flash) 이용
