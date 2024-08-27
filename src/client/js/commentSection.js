@@ -6,7 +6,12 @@ const handleSubmit = (event) => {
 
   const textarea = form.querySelector("textarea");
   const text = textarea.value;
-  const video = videoContainer.dataset.id;
+  const videoId = videoContainer.dataset.id;
+
+  fetch(`/api/videos/${videoId}/comment`, {
+    method: "POST",
+    body: JSON.stringify({ text }),
+  });
 };
 
 if (form) {
