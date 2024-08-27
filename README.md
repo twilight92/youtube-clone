@@ -64,6 +64,9 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
       - video
   - [x] backend에 request 보내기
     - fetch를 이용해 text와 video란 정보를 url로 보내기
+      - json 미들웨어 적용 `app.use(express.json());`
+      - frontend에서 request를 보내기 전 데이터를 받아 string으로 바꿔줌 `JSON.stringyfy();`
+      - backend에서 이 string을 받아 JS object로 바꿔줌 `JSON.parse();`
 - 사용자 편의성 제공
   - [x] flash 메세지를 이용한 안내 문구 제공
       - [express-flash](https://github.com/twilight92/youtube-clone/wiki/express%E2%80%90flash) 이용
