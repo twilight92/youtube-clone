@@ -40,8 +40,10 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
   - [x] Nodemon 알아보기
 - Video
   - [x] Player
-    - 재생/정지/오디오 컨트롤/타임 업데이트/재생시간 변경/재생 종료 시 조회수 +1
+    - 재생/정지/오디오 컨트롤/타임 업데이트/재생시간 변경
       - [HTMLVideoElement](https://github.com/twilight92/youtube-clone/wiki/HTMLVideoElement) 이용
+    - 재생 종료 시 조회수 +1
+      - fetch로 API 요청 보내기(이동 없이 URL 호출)
   - [x] Upload
     - 영상/스크린샷 파일 생성
       - 미디어 입력 권한 - [MediaDevices](https://github.com/twilight92/youtube-clone/wiki/Media#user-content-mediadevices-getusermedia-메서드)를 이용한 미디어 장치 접근
@@ -60,7 +62,8 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
       - comment text
       - owner
       - video
-  - [x] 
+  - [x] backend에 request 보내기
+    - fetch를 이용해 text와 video url로 보내기
 - 사용자 편의성 제공
   - [x] flash 메세지를 이용한 안내 문구 제공
       - [express-flash](https://github.com/twilight92/youtube-clone/wiki/express%E2%80%90flash) 이용
