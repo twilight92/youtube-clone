@@ -21,7 +21,6 @@ const handleSubmit = async (event) => {
   });
 
   textarea.value = "";
-  window.location.reload();
 };
 
 if (form) {
