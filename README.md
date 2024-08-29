@@ -68,8 +68,8 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
       - frontend에서 request를 보내기 전 데이터를 받아 string으로 바꿔줌 `JSON.stringyfy();`
       - backend에서 이 string을 받아 JS object로 바꿔줌 `JSON.parse();`
   - [x] 실시간 댓글 구현
-    - 옵션 1) pug를 이용한 구현 방법
-    - 옵션 2) js를 이용한 구현 방법
+    - 옵션 1) pug를 이용한 방법
+    - 옵션 2) js를 이용한 방법
 - 사용자 편의성 제공
   - [x] flash 메세지를 이용한 안내 문구 제공
       - [express-flash](https://github.com/twilight92/youtube-clone/wiki/express%E2%80%90flash) 이용
