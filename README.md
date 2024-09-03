@@ -33,6 +33,8 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
 <br>
 
 ## Todo
+- NodeJS 알아보기
+- NPM 알아보기
 - Set Up
   - [x] NodeJS Project 생성
   - [x] Express 설치
