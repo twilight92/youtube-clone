@@ -33,6 +33,8 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
 <br>
 
 ## Todo
+- NodeJS 알아보기
+- NPM 알아보기
 - Set Up
   - [x] NodeJS Project 생성
   - [x] Express 설치
@@ -73,7 +75,7 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
   - [x] 댓글 삭제
     - X 버튼 클릭 시 fetch request를 보내서 댓글 지우기
       - API route와 컨트롤러 생성
-      - 유저가 댓글의 주인이 맞는지 확인 또는 주인에게만 삭제 버튼 노출(pug)
+      - 유저가 댓글의 주인이 맞는지 확인 또는 주인에게만 삭제 버튼 노출
 - 사용자 편의성 제공
   - [x] flash 메세지를 이용한 안내 문구 제공
       - [express-flash](https://github.com/twilight92/youtube-clone/wiki/express%E2%80%90flash) 이용
