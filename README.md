@@ -92,6 +92,9 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
       - start → fly.io에서 사용
   - [x] Fly Launch
     - [Install flyctl](https://fly.io/docs/getting-started/launch/)
+    - `fly auth login`
+    - `fly launch`
+    - `fly deploy`
 
 <br>
   
