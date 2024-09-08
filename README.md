@@ -81,7 +81,7 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
       - [express-flash](https://github.com/twilight92/youtube-clone/wiki/express%E2%80%90flash) 이용
 - 배포
   - [x] 배포 준비
-    - [Fly.io](https://fly.io/) - Node.js 애플리케이션 배포
+    - [Fly.io](https://fly.io/) - Node.js 애플리케이션 배포(결제 카드 등록 필요)
     - [MongoDB Atlas](https://www.mongodb.com/ko-kr/lp/cloud/atlas/try4?utm_content=rlsavisitor&utm_source=google&utm_campaign=search_gs_pl_evergreen_atlas_core_retarget-brand_gic-null_apac-all_ps-all_desktop_eng_lead&utm_term=mongodb%20atlas&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=14412646476&adgroup=131761130772&cq_cmp=14412646476&gad_source=1&gclid=CjwKCAjwreW2BhBhEiwAavLwfPJF7nG6qGLtPI5ReIjo2uxO2t8efOgDJIxCtLJVbieBhv81FAYGqxoCv_0QAvD_BwE?utm_content=rlsavisitor&utm_source=google&utm_campaign=search_gs_pl_evergreen_atlas_core_retarget-brand_gic-null_apac-all_ps-all_desktop_eng_lead&utm_term=mongodb%20atlas&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=14412646476&adgroup=131761130772&cq_cmp=14412646476&gad_source=1&gclid=CjwKCAjwreW2BhBhEiwAavLwfPJF7nG6qGLtPI5ReIjo2uxO2t8efOgDJIxCtLJVbieBhv81FAYGqxoCv_0QAvD_BwE) - 몽고DB 데이터베이스 배포
     - [AWS](https://aws.amazon.com/ko/) - 사용자가 업로드 하는 파일 저장
   - [x] production 모드로 빌드
