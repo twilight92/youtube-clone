@@ -95,6 +95,7 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
     - `fly auth login`
     - `fly launch`
     - `fly deploy`
+  - [x] MongoDB Atlas
 
 <br>
   
