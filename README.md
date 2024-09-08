@@ -99,6 +99,8 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
   - [x] MongoDB Atlas
   - [x] AWS S3 & IAM Setup
     - 코드를 실행하는 서버에 파일을 저장하지 않는다
+    - Bucket 생성
+    - IAM<br>API key를 fly.io 서버에 제공해줌으로써 서버가 그 API Key를 이용해 사진들을 bucket에 저장할 수 있게  
   
 
 <br>
