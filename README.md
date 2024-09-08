@@ -95,7 +95,7 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
     - `fly auth login`
     - `fly launch`
     - `fly deploy`
-    - 로그인 URL 변경 GitHub > Developer Settings > OAuth Apps > Authorization callback URL 변경
+    - 로그인 URL 변경<br>GitHub > Developer Settings > OAuth Apps > Authorization callback URL 변경
   - [x] MongoDB Atlas
   
 
