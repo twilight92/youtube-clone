@@ -97,6 +97,8 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
     - `fly deploy`
     - 로그인 URL 변경<br>GitHub > Developer Settings > OAuth Apps > Authorization callback URL 변경
   - [x] MongoDB Atlas
+  - [x] AWS S3 & IAM Setup
+    - 코드를 실행하는 서버에 파일을 저장하지 않는다
   
 
 <br>
