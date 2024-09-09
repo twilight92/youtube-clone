@@ -99,7 +99,8 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
   - [x] MongoDB Atlas
   - [x] AWS S3 & IAM Setup
     - S3 Bucket 생성
-    - IAM > Users 생성 <br>API key를 fly.io 서버에 제공해줌으로써 서버가 그 API Key를 이용해 사진들을 bucket에 저장할 수 있게  
+    - IAM > Users 생성 <br>API key를 fly.io 서버에 제공해줌으로써 서버가 그 API Key를 이용해 사진들을 bucket에 저장할 수 있게
+  - [x] Multer S3 Uploads
   
 
 <br>
