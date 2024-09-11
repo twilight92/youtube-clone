@@ -33,8 +33,8 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
 <br>
 
 ## Todo
-- [NodeJS](https://github.com/twilight92/youtube-clone/wiki/NodeJS-NPM#nodejs) 알아보기
-- [NPM](https://github.com/twilight92/youtube-clone/wiki/NodeJS-NPM#npm) 알아보기
+- [NodeJS](https://github.com/twilight92/youtube-clone/wiki/1.-NodeJS-NPM#nodejs) 알아보기
+- [NPM](https://github.com/twilight92/youtube-clone/wiki/1.-NodeJS-NPM##npm) 알아보기
 - [Set Up](https://github.com/twilight92/youtube-clone/wiki/2.-Set-Up)
   - [x] NodeJS Project 생성
   - [x] Express 설치
