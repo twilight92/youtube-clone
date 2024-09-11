@@ -40,7 +40,8 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
   - [x] Dependencies 알아보기
   - [x] Nodemon 알아보기
 - [Express](https://github.com/twilight92/youtube-clone/wiki/Express)
-  - [x] a
+  - [x] first server
+  - [x] GET Requests
 - Video
   - [x] Player
     - 재생/정지/오디오 컨트롤/타임 업데이트/재생시간 변경
