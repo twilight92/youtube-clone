@@ -43,7 +43,8 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
   - [x] first server
   - [x] GET Requests
   - [x] Responses
-  - [x] Controller/Middlewares 
+  - [x] Controller/Middlewares
+    - app.use()/app.get() 차이에 대한 이해
 - Video
   - [x] Player
     - 재생/정지/오디오 컨트롤/타임 업데이트/재생시간 변경
