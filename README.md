@@ -45,6 +45,7 @@ Vanilla JS와 NodeJS를 이용한 유튜브 클론코딩
   - [x] Responses
   - [x] Controller/Middlewares
     - Express에서 미들웨어를 처리하는 방식에 대한 이해<br>app.use()/app.get() 차이
+  - [x] morgan 알아보기
 - Video
   - [x] Player
     - 재생/정지/오디오 컨트롤/타임 업데이트/재생시간 변경
